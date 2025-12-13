@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Konwea Shopping Plaza Chamber of Commerce - Supporting Local Business Growth and Community Development" />
+  <meta name="author" content="Tochukwu Carl-Mbanefo" />
+  <title>Konwea Chamber of Commerce | Asaba, Delta State</title>
+
+  <!-- Social Media Meta -->
+  <meta property="og:title" content="Konwea Shopping Plaza Chamber of Commerce" />
+  <meta property="og:description"
+    content="Welcome to Konwea Chamber of Commerce. Connecting businesses and communities. Explore events, business directories, and join the local economic movement." />
+  <meta property="og:image" content="images/social-preview.jpg" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <!-- Preconnect to API to shave connection time -->
+  <link rel="preconnect" href="https://api.openweathermap.org" crossorigin>
+  <!-- Preload LCP hero image (use a WebP optimized variant if available) -->
+  <link rel="preload" as="image" href="images/coins-1726618.webp" type="image/webp" />
+
+  <link rel="icon" href="images/shopping-6125344_640.png" type="image/x-icon" />
+  <link rel="stylesheet" href="styles/index.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <img src="images/shopping-6125344_640.png" alt="Konwea Chamber Logo" />
+        <span class="brand">Konwea Chamber</span>
+      </div>
+
+      <button id="hamburger" aria-label="Toggle Navigation Menu">☰</button>
+
+      <nav id="navMenu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="discover.html">Discover</a></li>
+        </ul>
+      </nav>
+
+      <button class="cta">Tickets</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <picture>
+      <source src="images/coins-1726618-1600.webp 1600w, images/coins-1726618-800.webp 800w" type="image/webp">
+      <source src="images/coins-1726618-1600.jpg 1600w, images/coins-1726618-800.jpg 800w" type="image/jpeg">
+      <img class="hero-lcp" src="images/coins-1726618.webp" alt="Hands holding coins — support local business"
+        fetchpriority="high" loading="eager" decoding="async" sizes="(max-width: 600px) 800px, 1600px" />
+    </picture>
+    <div class="hero-wrap">
+      <h1>Welcome to Konwea Chamber of Commerce</h1>
+      <p>Supporting local businesses and strengthening our community.</p>
+
+      <p class="hero-location" aria-label="Location">
+        <span class="loc-icon" aria-hidden="true">📍</span>
+        <span class="loc-text">289 Nnebisi Road, Asaba, Delta State</span>
+        <a class="loc-map" href="https://maps.app.goo.gl/FW7i7tnM6qPNmUtB8" target="_blank"
+          rel="noopener noreferrer">View map</a>
+      </p>
+
+      <a href="join.html" class="cta-btn">Join the Chamber</a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Events -->
+    <section class="events">
+      <h2>Upcoming Events / Internship - training Programs / Job Opennings</h2>
+      <article>
+        <div class="meta">
+          <span class="date">October 15, 2025</span>
+          <span class="time">7:30 AM</span>
+          <span class="place">Community Hall</span>
+        </div>
+        <div class="content">
+          <h3>Business Networking Breakfast</h3>
+          <p>Connect with local business leaders and entrepreneurs over breakfast.</p>
+          <a href="#" class="event-cta">Learn More</a>
+        </div>
+      </article>
+
+      <article>
+        <div class="meta">
+          <span class="date">October 22, 2025</span>
+          <span class="time">5:00 PM</span>
+          <span class="place">Chamber Office</span>
+        </div>
+        <div class="content">
+          <h3>Small Business Workshop</h3>
+          <p>Expert tips for growing your small business in the digital age.</p>
+          <a href="#" class="event-cta">Register</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- Weather -->
+    <!-- Weather -->
+    <section class="weather">
+      <h2>Local Weather</h2>
+      <div id="current-weather" class="weather-card">
+        <div class="temp">--°C</div>
+        <div class="desc">Loading...</div>
+      </div>
+      <div id="forecast">
+        <h3>3-Day Forecast</h3>
+      </div>
+    </section>
+
+    <!-- Spotlights -->
+    <section class="spotlights">
+      <h2>Featured Businesses</h2>
+      <div class="view-toggle">
+  <button id="gridViewBtn">Grid View</button>
+  <button id="listViewBtn">List View</button>
+</div>
+
+<div class="member-container grid-view compact">
+
+  <div class="member-card gold">
+    <div class="member-top">
+      <img class="member-logo" src="logo1.png">
+      <h3>Gold Business</h3>
+
+      <div class="member-actions">
+        <button>Visit</button>
+        <button>Call</button>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="info-line">
+      <i>📞</i> +234 999 4444
+    </div>
+    <div class="info-line">
+      <i>📍</i> Lagos, Nigeria
+    </div>
+  </div>
+
+  <div class="member-card silver">
+    <div class="member-top">
+      <img class="member-logo" src="logo2.png">
+      <h3>Silver Member</h3>
+
+      <div class="member-actions">
+        <button>Visit</button>
+        <button>Call</button>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="info-line">
+      <i>📞</i> +234 555 5555
+    </div>
+    <div class="info-line">
+      <i>📍</i> Abuja, Nigeria
+    </div>
+  </div>
+
+  <div class="member-card">
+    <div class="member-top">
+      <img class="member-logo" src="logo3.png">
+      <h3>Regular Member</h3>
+
+      <div class="member-actions">
+        <button>Visit</button>
+        <button>Call</button>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="info-line">
+      <i>📞</i> +234 111 2222
+    </div>
+    <div class="info-line">
+      <i>📍</i> Port Harcourt
+    </div>
+  </div>
+
+</div>
+
+      <div id="spotlight-container" class="spotlight-grid"></div>
+    </section>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /*-----------------------------------------------------------
+    STYLES (Injected into page)
+  -----------------------------------------------------------*/
+  const style = document.createElement("style");
+  style.textContent = `
+    :root {
+      --primary: #004d40;
+      --accent: #ffb300;
+      --silver: #c0c0c0;
+      --bg: #f6f7f9;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --text: #0f172a;
+      --gold-glow: 0 0 18px rgba(255, 215, 0, 0.6);
+      --silver-shine: inset 0 0 10px rgba(192,192,192,0.4);
+    }
+
+    .member-container {
+      transition: all 0.4s ease;
+      display: grid;
+      gap: 1rem;
+    }
+
+    /* --- GRID ALWAYS 3 ACROSS --- */
+    .grid-view {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 900px) {
+      .grid-view {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .grid-view {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* --- LIST VIEW --- */
+    .list-view {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .member-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 12px 14px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border: 1px solid #e5e7eb;
+      transition: 0.3s ease;
+      overflow: hidden;
+    }
+
+    /* COMPACT (smaller spacing) */
+    .compact .member-card {
+      padding: 8px 10px;
+      gap: 4px;
+    }
+
+    /* GOLD + SILVER BADGES */
+    .member-card.gold {
+      box-shadow: var(--gold-glow);
+      border: 1px solid gold;
+    }
+    .member-card.silver {
+      box-shadow: var(--silver-shine);
+      border: 1px solid var(--silver);
+    }
+
+    /* HEADER AREA */
+    .member-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* LOGO with reveal animation */
+    .member-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      object-fit: contain;
+      background: #fff;
+      animation: reveal 0.7s ease forwards;
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    @keyframes reveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ACTION BUTTON RIGHT */
+    .member-actions {
+      margin-left: auto;
+      display: flex;
+      gap: 6px;
+    }
+    .member-actions button {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      background: var(--primary);
+      color: white;
+      font-size: 12px;
+      transition: 0.2s;
+    }
+
+    .member-actions button:hover {
+      background: var(--accent);
+      color: black;
+    }
+
+    /* INFO AREA WITH DIVIDERS */
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: #e2e2e2;
+      margin: 6px 0;
+    }
+
+    .info-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .info-line i {
+      font-size: 16px;
+      opacity: 0.8;
+    }
+
+    /* TOGGLE BUTTONS */
+    .view-toggle {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .view-toggle button {
+      border: none;
+      padding: 8px 14px;
+      background: var(--primary);
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  `;
+  document.head.appendChild(style);
+
+  /*-----------------------------------------------------------
+    VIEW TOGGLE
+  -----------------------------------------------------------*/
+  const container = document.querySelector(".member-container");
+
+  const gridBtn = document.getElementById("gridViewBtn");
+  const listBtn = document.getElementById("listViewBtn");
+
+  gridBtn.addEventListener("click", () => {
+    container.classList.add("grid-view");
+    container.classList.remove("list-view");
+  });
+
+  listBtn.addEventListener("click", () => {
+    container.classList.remove("grid-view");
+    container.classList.add("list-view");
+  });
+
+});
+</script>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand">Konwea Chamber</span>
+        <p>Building stronger business connections in Delta State.</p>
+      </div>
+
+      <div class="footer-contact">
+        <p><strong>Contact:</strong></p>
+        <p>📍 289 Nnebisi Road, Asaba</p>
+        <p>📧 KonweaChamber@proton.me</p>
+        <p>📞 (+234) 0000-0000-00</p>
+      </div>
+
+      <div class="footer-links">
+        <p>
+        <strong>
+        <a href="index.html">Home</a>
+        <a href="directory.html">Directory</a>
+        <a href="join.html">Join</a>
+        <a href="discover.html">Discover</a>
+        </strong>
+        </p>
+      </div>
+
+      <div class="social">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">Twitter</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p> chamber of Commerce Project | Tochukwu Carl-Mbanefo</p>
+      <p>&copy; <span id="year"></span> Konwea Chamber of Commerce</p>
+      <p>Last Updated: <span id="lastModified"></span></p>
+    </div>
+  </footer>
+
+  <!-- Defer all non-critical scripts -->
+  <script defer src="scripts/wheather.js"></script>
+  <script defer src="scripts/spotlight.js"></script>
+  <script defer src="scripts/directory.js"></script>
+
+  <!-- Register service worker for caching -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker?.register('sw.js').catch(() => {/*sw reg failed*/ });
+      });
+    }
+  </script>
+</body>
+
+</html>

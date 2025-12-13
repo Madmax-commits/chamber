@@ -1,0 +1,1002 @@
+
+:root{
+  --primary: #004d40;
+  --accent: #ffb300;
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --text: #0f1724;
+  --glass: rgba(255,255,255,0.6);
+  --header-height: 72px;
+  --max-width: 1200px;
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(12, 18, 26, 0.08);
+  --ease: cubic-bezier(.2,.9,.3,1);
+  --ff: "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;width:100%;background:var(--bg);font-family:var(--ff);color:var(--text);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 1.25rem}
+
+/* Header */
+header{
+  position:sticky;
+  top:0;
+  z-index:1200;
+  height:var(--header-height);
+  display:flex;
+  align-items:center;
+  width:100%;
+  background:linear-gradient(90deg,var(--primary), color-mix(in srgb, var(--primary) 75%, black 5%));
+  box-shadow: 0 2px 10px rgba(2,6,23,0.06);
+  backdrop-filter: blur(6px);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;flex:1;gap:1rem}
+.logo{display:flex;align-items:center;gap:.75rem}
+.logo img{height:44px;width:auto;border-radius:8px}
+.brand{font-weight:700;color:#fff;letter-spacing:.2px;font-size:1rem}
+.nav{display:flex;align-items:center;gap:1rem}
+nav ul{display:flex;gap:1rem;list-style:none}
+nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:.5rem .6rem;border-radius:8px;font-weight:600;transition:all .18s var(--ease)}
+nav a:hover, nav a.active{background:rgba(255,255,255,0.06);transform:translateY(-1px)}
+.cta, .cta-btn{background:var(--accent);color:#071019;padding:.55rem .9rem;border-radius:10px;font-weight:700;text-decoration:none;box-shadow:0 6px 18px rgba(255,179,0,0.12)}
+#hamburger{display:none;background:transparent;border:0;color:#fff;font-size:1.6rem}
+
+/* Hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  margin: 0 1rem;
+  min-height: 56vh;
+  display: grid;
+  place-items:center;
+  background: linear-gradient(90deg, rgba(0,77,64,0.15), rgba(255,179,0,0.06));
+}
+/* make the <img> behave like a background-cover */
+.hero .hero-lcp {
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  filter: brightness(0.65);
+}
+
+/* ensure hero content sits above the image */
+.hero-wrap {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+}
+.hero img {
+  display: block !important;
+}
+.hero h1{font-size:clamp(1.6rem,3.8vw,2.6rem);margin-bottom:.6rem;line-height:1.05;font-weight:800}
+.hero p{color:var(--glass);margin-bottom:1rem;font-size:1rem;max-width:70ch;margin-left:auto;margin-right:auto}
+.hero .cta-btn{display:inline-block}
+
+
+/* ...existing code... */
+/* Hero location pill */
+.hero-location{
+  margin: .6rem auto 0;
+  display:inline-flex;
+  text-align: center;
+  gap:.5rem;
+  align-items:center;
+  background: rgba(255,255,255,0.08);
+  padding:.45rem .7rem;
+  border-radius:999px;
+  font-weight:600;
+  color: #fff;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 6px 12px rgba(2,6,23,0.06);
+  font-size:.95rem;
+}
+.loc-text{
+  text-align: center;
+}
+.hero-location .loc-icon{font-size:1.05rem;line-height:1}
+.hero-location .loc-map{
+  margin-left:.6rem;
+  background:rgba(255,255,255,0.12);
+  color:#fff;
+  padding:.25rem .5rem;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:.85rem;
+}
+.hero-location .loc-map:hover{transform:translateY(-2px)}
+@media (max-width:420px){
+  .hero-location{font-size:.9rem;padding:.4rem .6rem}
+  .hero-location .loc-map{display:none}
+}
+/* ...existing code... */
+/* Main layout */
+main{padding:2.25rem 0}
+.section{padding:1.25rem;margin:0 1rem;background:transparent}
+.card{
+  background:var(--card);
+  border-radius:12px;
+  padding:1.25rem;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(15,23,36,0.03);
+}
+
+/* Grids */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.spotlight-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.member-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+
+/* Cards & components */
+.info-box{padding:1rem;border-radius:10px;background:linear-gradient(180deg, #fff, #fcfcfe)}
+.info-box h3{color:var(--primary);margin-bottom:.5rem}
+.info-box p{color:var(--muted);font-size:.95rem}
+
+.spotlight-card{text-align:center;padding:1.2rem;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.96),#fff)}
+.spotlight-card img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:.8rem}
+.spotlight-card h4{margin-bottom:.35rem}
+.spotlight-card p{color:var(--muted);font-size:.95rem}
+
+/* Members */
+.member-card{display:flex;flex-direction:column;align-items:center;padding:1rem;background:linear-gradient(180deg,#fff,#fbfbfd);border-radius:10px}
+.member-card img{width:80px;height:80px;border-radius:999px;object-fit:cover;margin-bottom:.6rem}
+.member-name{font-weight:700}
+.member-role{color:var(--muted);font-size:.9rem}
+
+/* Utilities */
+.center{display:grid;place-items:center}
+.kv{display:flex;gap:.5rem;align-items:center}
+.small{font-size:.85rem;color:var(--muted)}
+
+
+/* ---------- Standard Footer CSS ---------- */
+/* main footer wrapper */
+/* Footer color contrast improvements */
+footer {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0,77,64,0.98), rgba(0,30,24,0.98));
+  color: #ffffff; /* Changed from rgba for better contrast */
+  padding: 3rem 1rem;
+  box-shadow: 0 -6px 30px rgba(2,6,23,0.06);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+footer .footer-brand p,
+footer .footer-contact p,
+footer .footer-links a {
+  color: #ffffff; /* AA compliant contrast ratio */
+}
+
+footer .footer-bottom p {
+  color: #ffffff;
+}
+
+footer .social a {
+  color: #ffffff;
+  background: rgba(255,179,0,0.15);
+}
+
+footer .social a:hover,
+footer .social a:focus {
+  background: var(--accent);
+  color: #071019;
+}
+
+/* inner container: centers content and defines columns */
+footer .footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+/* Brand / about column */
+footer .footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footer-brand .brand {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+}
+.footer-brand p {
+  color: rgba(255,255,255,0.9);
+  line-height: 1.55;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Links column */
+footer .footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.footer-links a {
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color .18s var(--ease), transform .18s var(--ease);
+}
+.footer-links a:hover,
+.footer-links a:focus {
+  color: var(--accent);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* Contact / small utilities column */
+footer .footer-contact {
+  color: rgba(255,255,255,0.92);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Social icons row (right aligned by default) */
+/* Social icons row (right aligned by default) */
+footer .social {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+footer .social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.85rem;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  box-shadow: 0 6px 14px rgba(2,6,23,0.06);
+  transition: transform .18s var(--ease), background .18s var(--ease), color .18s var(--ease);
+}
+footer .social a:hover,
+footer .social a:focus {
+  transform: translateY(-3px);
+  background: var(--accent);
+  color: #071019;
+  outline: none;
+}
+
+/* bottom row spanning full width */
+footer .footer-bottom {
+  grid-column: 1 / -1;
+  max-width: var(--max-width);
+  margin: 1.25rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgba(255,255,255,0.75);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.03);
+  padding-top: 0.85rem;
+}
+
+footer .footer-bottom p {
+  margin: 0;
+  color: rgba(255,255,255,0.75);
+}
+
+/* small helper styles */
+footer small,
+footer .legal {
+  color: rgba(255,255,255,0.72);
+  font-size: 0.88rem;
+}
+
+/* Accessibility focus state */
+footer a:focus {
+  outline: 3px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Responsive: stack columns on small screens, center socials */
+@media (max-width: 900px) {
+  footer .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  footer .social {
+    justify-content: flex-start;
+  }
+  footer .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* Optional: pin socials to the far right inside footer-inner */
+footer .footer-inner > .social {
+  grid-column: 3;
+  justify-self: end;
+}
+@media (max-width: 900px) {
+  footer .footer-inner > .social { grid-column: auto; justify-self: start; }
+}
+/* ---------- End Footer CSS ---------- */
+
+/* Responsive nav */
+@media (max-width: 900px){
+  .container{padding:0 1rem}
+  nav ul{gap:.5rem}
+  .hero{margin-left:0;margin-right:0;border-radius:0}
+  header{padding:0 1rem}
+}
+@media (max-width: 760px){
+  nav ul{display:none}
+  #hamburger{display:block}
+  .header-inner{gap:.5rem}
+  .hero-wrap{padding:1.25rem}
+  .hero{min-height:48vh}
+  .footer-top{flex-direction:column;align-items:flex-start}
+}
+@media (min-width: 900px){
+  .hero{min-height:62vh;margin-left:auto;margin-right:auto;border-radius:16px}
+  .header-inner{max-width:var(--max-width);margin:0 auto;padding:0 1rem}
+  .container{padding:0}
+}
+
+/* Accessibility & minor fixes */
+a:focus{outline:3px solid color-mix(in srgb, var(--accent) 40%, transparent);outline-offset:3px}
+img{max-width:100%;height:auto;display:block}
+.hidden{display:none !important}
+/* end */
+
+
+
+
+/* Events — modern, responsive cards */
+.events{
+  margin: 0 1rem 2.25rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.events h2{
+  grid-column: 1 / -1;
+  font-size: 1.35rem;
+  margin: 0 0 .5rem;
+  color: var(--primary);
+  letter-spacing: .4px;
+}
+
+/* each event card */
+.events > article{
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem;
+  background: linear-gradient(180deg, var(--card), #fbfbfd);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(12,18,26,0.06);
+  border: 1px solid rgba(15,23,36,0.04);
+}
+
+/* Left meta column: date/time stacked */
+.events > article .meta{
+  min-width: 110px;
+  display:flex;
+  flex-direction:column;
+  gap:.25rem;
+  align-items:flex-start;
+  color:var(--muted);
+  font-weight:600;
+  font-size:.95rem;
+}
+
+/* Content column */
+.events > article .content{
+  flex:1;
+}
+
+/* Title and details */
+.events > article h3{
+  margin: 0 0 .25rem;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+.events > article p{
+  margin: 0;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+/* icons for date/location/time using pseudo elements */
+.events > article .meta .date::before{ content: "📅 "; }
+.events > article .meta .time::before{ content: "⏰ "; }
+.events > article .meta .place::before{ content: "📍 "; }
+
+/* Action button */
+.events .event-cta{
+  margin-top: .5rem;
+  display:inline-block;
+  background: var(--accent);
+  color: #071019;
+  padding: .45rem .7rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight:700;
+  box-shadow: 0 6px 12px rgba(255,179,0,0.12);
+}
+
+/* Remove the duplicate @media (max-width: 480px) block that starts around line 450 */
+/* Keep only the optimized version below */
+
+/* ========== MOBILE-FIRST RESPONSIVE DESIGN ========== */
+
+/* Base: Small screens (phones) - 320px to 480px */
+/* Base: Small screens (phones) - 320px to 480px */
+@media (max-width: 480px) {
+  :root {
+    --header-height: 56px;
+  }
+
+  /* Header mobile */
+  header {
+    height: var(--header-height);
+    padding: 0.5rem 0.75rem;
+    justify-content: space-between;
+    gap: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+ .header-inner {
+    gap: 0.35rem;
+    width: auto;
+    padding: 0;
+    flex: 0 1 auto;
+    justify-content: flex-start;
+  }
+  .logo {
+    gap: 0.4rem;
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  .logo img {
+    height: 32px;
+    width: auto;
+  }
+
+  .brand {
+    font-size: 0.75rem;
+    letter-spacing: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 700;
+  }
+
+  /* Navigation mobile */
+ nav {
+    display: none;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background: linear-gradient(180deg, var(--primary) 0%, rgba(0,77,64,0.98) 100%);
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    z-index: 1099;
+    list-style: none;
+    box-shadow: 0 8px 24px rgba(2,6,23,0.12);
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav li {
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    margin: 0;
+  }
+
+  nav a {
+    padding: 0.75rem 1rem;
+    display: block;
+    color: rgba(255,255,255,0.95);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background .15s ease;
+  }
+
+  nav a:hover,
+  nav a.active {
+    background: rgba(255,255,255,0.08);
+  }
+
+  #hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    font-size: 1.4rem;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    order: 2;
+    flex-shrink: 0;
+    margin-left: auto; /* Pushes to the right */
+  }
+
+  .cta {
+    display: none;
+  }
+}
+  /* Hero mobile */
+  .hero {
+    margin-top: 0;
+    min-height: 40vh;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+  }
+
+  .hero-wrap {
+    padding: 1rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    line-height: 1.1;
+  }
+
+  .hero p {
+    font-size: 0.85rem;
+  }
+
+  .hero-location {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-location .loc-map {
+    display: none;
+  }
+
+  /* Main content mobile */
+  main {
+    padding: 0.75rem 0;
+  }
+
+  .section {
+    margin: 0;
+    padding: 0.75rem;
+  }
+
+  .card {
+    padding: 0.75rem;
+  }
+
+  /* Grids mobile */
+  .info-grid,
+  .spotlight-grid,
+  .member-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0 0.75rem;
+  }
+
+  /* Events mobile */
+  .events {
+    margin: 0;
+    padding: 0.75rem;
+    grid-template-columns: 1fr;
+  }
+
+  .events > article {
+    flex-direction: column;
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .events .event-cta {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* Members mobile */
+  .member-card {
+    padding: 0.75rem;
+  }
+
+  .member-card img {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Footer mobile */
+  footer {
+    padding: 1.25rem 0.75rem;
+  }
+
+  footer .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  footer .social {
+    justify-content: flex-start;
+  }
+
+  footer .footer-bottom {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  /* Weather mobile */
+  .weather {
+    margin: 0;
+    padding: 0.75rem;
+    grid-template-columns: 1fr;
+  }
+
+  #forecast {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+
+/* Small tablets (481px - 600px) */
+@media (min-width: 481px) and (max-width: 600px) {
+  :root {
+    --header-height: 60px;
+  }
+
+  header {
+    padding: 0.65rem 0.9rem;
+  }
+
+  .header-inner {
+    gap: 0.65rem;
+  }
+
+  .logo img {
+    height: 38px;
+  }
+
+  .brand {
+    font-size: 0.85rem;
+  }
+
+  nav ul {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+   right: 0;
+    width: 100%;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  #hamburger {
+    display: block;
+  }
+
+  .cta {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Tablet screens (601px - 768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+  header {
+    padding: 0.75rem 1rem;
+  }
+
+  .header-inner {
+    gap: 1rem;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  #hamburger {
+    display: none;
+  }
+
+  .cta {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Desktop screens (769px+) */
+@media (min-width: 769px) {
+  header {
+    padding: 0 1rem;
+  }
+
+  .header-inner {
+    gap: 1rem;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 1rem;
+  }
+
+  #hamburger {
+    display: none;
+  }
+
+  .cta {
+    padding: 0.55rem 0.9rem;
+    font-size: 1rem;
+  }
+}
+
+/* ========== END RESPONSIVE ========== */
+/* ========== WEATHER SECTION ========== */
+
+.weather {
+  margin: 0 1rem 2.25rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.weather h2 {
+  grid-column: 1 / -1;
+  font-size: 1.35rem;
+  margin: 0 0 .75rem;
+  color: var(--primary);
+  letter-spacing: .4px;
+  font-weight: 700;
+}
+
+/* Current weather card */
+#current-weather {
+  grid-column: 1 / -1;
+}
+
+.weather-card {
+  padding: 1.5rem;
+  background: linear-gradient(180deg, var(--card), #fbfbfd);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(12,18,26,0.06);
+  border: 1px solid rgba(15,23,36,0.04);
+  text-align: center;
+}
+
+.weather-card h3 {
+  margin: 0 0 .75rem;
+  font-size: 1.25rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.weather-card .temp {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin: 0.5rem 0;
+  line-height: 1;
+}
+
+.weather-card .desc {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: capitalize;
+  margin: 0.75rem 0;
+  font-weight: 600;
+}
+
+.weather-card .feels {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+}
+
+/* Forecast section */
+#forecast {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+#forecast h3 {
+  grid-column: 1 / -1;
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.forecast-day {
+  padding: 1rem;
+  background: linear-gradient(180deg, #fff, #fcfcfe);
+  border-radius: 10px;
+  border: 1px solid rgba(15,23,36,0.03);
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(12,18,26,0.04);
+}
+
+.forecast-day p {
+  margin: 0.35rem 0;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.forecast-day p strong {
+  color: var(--primary);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.forecast-day p:last-child {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Weather icons/emoji enhancements */
+.weather-card::before {
+  content: "☀️";
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive weather adjustments */
+@media (max-width: 768px) {
+  .weather {
+    margin: 0 0.75rem 2rem;
+    padding: 0.75rem;
+    grid-template-columns: 1fr;
+  }
+
+  #forecast {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .forecast-day {
+    padding: 0.85rem;
+  }
+
+  .weather-card .temp {
+    font-size: 2.2rem;
+  }
+
+  .weather h2 {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .weather {
+    margin: 0;
+    padding: 0.75rem;
+    grid-template-columns: 1fr;
+  }
+
+  #forecast {
+    grid-template-columns: 1fr;
+  }
+
+  .forecast-day {
+    padding: 0.75rem;
+  }
+
+  .weather-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .weather-card .temp {
+    font-size: 2rem;
+  }
+
+  .weather-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .weather h2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .weather {
+    margin: 0 1rem 2.5rem;
+  }
+
+  #forecast {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .weather-card {
+    padding: 2rem;
+  }
+
+  .weather-card .temp {
+    font-size: 3.2rem;
+  }
+}
+
+/* ========== END WEATHER SECTION ========== */
+.hero .hero-lcp {
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  filter: brightness(0.65);
+}
+ .header-inner {
+    justify-content: flex-start;
+    padding-left: 0.75rem;
+  }
+
+  .logo {
+    margin-right: 0.5rem;
+  }
+
+  /* hide CTA on very small screens to avoid overlap */
+  .cta {
+    display: none;
+  }
+
+  /* ensure nav dropdown covers full width when opened */
+  nav ul {
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
